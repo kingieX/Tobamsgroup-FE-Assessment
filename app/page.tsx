@@ -1,36 +1,41 @@
 // app/page.tsx
 import React from 'react';
-import Layout from './layout';
+import Hero from './components/Hero';
+import CategoryCard from './components/CategoryCard';
+
+// Categories data
+const categories = [
+  { id: 1, label: "Breakfast", image: "/category/category1.png", gradient: "bg-gradient-to-b from-white to-green-100" },
+  { id: 2, label: "Vegan", image: "/category/category2.png", gradient: "bg-gradient-to-b from-white to-green-100" },
+  { id: 3, label: "Meat", image: "/category/category3.png", gradient: "bg-gradient-to-b from-white to-red-100" },
+  { id: 4, label: "Dessert", image: "/category/category4.png", gradient: "bg-gradient-to-b from-white to-yellow-100" },
+  { id: 5, label: "Lunch", image: "/category/category5.png", gradient: "bg-gradient-to-b from-white to-orange-100" },
+  { id: 6, label: "Chocolate", image: "/category/category6.png", gradient: "bg-gradient-to-b from-white to-pink-100" },
+];
+
 
 const HomePage = () => {
   return (
     <>
       <div className="home-page">
-        <header className="text-center py-16 bg-blue-100">
-          <h1 className="text-5xl font-bold mb-4">Welcome to Foodieland</h1>
-          <p className="text-lg text-gray-700">Discover the best recipes and cooking tips!</p>
-        </header>
+        <div className='py-12'>
+          <Hero />
+        </div>
 
-        <section className="featured-recipes py-16">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold mb-8">Featured Recipes</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {/* Placeholder for recipe cards */}
-              <div className="recipe-card bg-white shadow-md rounded-lg p-4">
-                <h3 className="text-xl font-semibold">Recipe 1</h3>
-                <p className="text-gray-600">Description of Recipe 1.</p>
-              </div>
-              <div className="recipe-card bg-white shadow-md rounded-lg p-4">
-                <h3 className="text-xl font-semibold">Recipe 2</h3>
-                <p className="text-gray-600">Description of Recipe 2.</p>
-              </div>
-              <div className="recipe-card bg-white shadow-md rounded-lg p-4">
-                <h3 className="text-xl font-semibold">Recipe 3</h3>
-                <p className="text-gray-600">Description of Recipe 3.</p>
-              </div>
-            </div>
+        <div className="py-10 px-24">
+          <div className="flex justify-between items-center mb-12">
+            <h2 className="text-2xl font-bold text-gray-900">Categories</h2>
+            <button className="text-sm font-medium bg-[#E7FAFE] px-4 py-2 rounded-xl hover:bg-blue-100 transition-colors duration-300">
+              View All Categories
+            </button>
           </div>
-        </section>
+          
+          <div className="flex justify-between space-x-4">
+            {categories.map(category => (
+              <CategoryCard key={category.id} label={category.label} image={category.image}  gradient={category.gradient} />
+            ))}
+          </div>
+        </div>
       </div>
     </>
   );

@@ -1,13 +1,18 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
+
+import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
+
 
 const Navbar = () => {
   return (
     <nav className="bg-white shadow-md">
-      <div className="container mx-auto flex items-center justify-between py-4">
+      <div className="container mx-auto flex items-center justify-between py-8 px-12">
         <div className="text-2xl font-bold">
           <Link href="/">
-            <p>Foodieland.</p>
+            {/* <p>Foodieland.</p> */}
+            <Image src='./Foodieland.svg' alt='Foodieland logo' width={40} height={40} className='w-32' />
           </Link>
         </div>
         <ul className="flex space-x-8">
@@ -37,15 +42,15 @@ const Navbar = () => {
             </Link>
           </li>
         </ul>
-        <div className="flex space-x-4">
+        <div className="flex space-x-6">
           <a href="#" className="hover:text-gray-700">
-            <i className="fab fa-facebook-f"></i>
+            <FaFacebookF />
           </a>
           <a href="#" className="hover:text-gray-700">
-            <i className="fab fa-twitter"></i>
+            <FaTwitter />
           </a>
           <a href="#" className="hover:text-gray-700">
-            <i className="fab fa-instagram"></i>
+            <FaInstagram />
           </a>
         </div>
       </div>
