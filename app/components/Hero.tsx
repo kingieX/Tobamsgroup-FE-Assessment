@@ -16,7 +16,7 @@ const Hero: React.FC = () => {
                 </div>
 
                 {/* Title */}
-                <h2 className="text-5xl max-w-sm font-medium text-gray-900 mt-4">
+                <h2 className="text-5xl max-w-sm font-medium leading-tight text-gray-900 mt-4">
                     Spicy delicious chicken wings
                 </h2>
 

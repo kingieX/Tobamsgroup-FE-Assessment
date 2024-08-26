@@ -3,6 +3,7 @@ import React from 'react';
 import Hero from './components/Hero';
 import CategoryCard from './components/CategoryCard';
 import RecipeCard from './components/RecipeCard';
+import ChefSection from './components/ChefSection';
 
 // Categories data
 const categories = [
@@ -156,6 +157,11 @@ const HomePage = () => {
               />
             ))}
           </div>
+        </section>
+
+        {/* Chef Section */}
+        <section className="py-16 px-24">
+          <ChefSection />
         </section>
       </div>
     </>
