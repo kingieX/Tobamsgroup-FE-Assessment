@@ -286,7 +286,7 @@ const HomePage = () => {
           </div>
 
           {/* Recipes Grid 2*/}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {recipes2.map((recipe) => (
               <Recipe2Card
                 key={recipe.id}
@@ -299,6 +299,20 @@ const HomePage = () => {
                 isLiked={recipe.isLiked}
               />
             ))}
+          </div>
+        </section>
+
+        {/* Send email */}
+        <section className='py-8 px-24'>
+          <div className='flex flex-col justify-center items-center bg-[#E7F9FD] rounded-[45px] py-24 px-24'>
+            <div className='mb-4'>
+              <h2 className="text-4xl font-medium text-center mb-4">Deliciousness to your inbox</h2>
+              <p className="text-center text-gray-600 max-w-xl mb-8">Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqut enim ad minim </p>
+            </div>
+            <div className='w-1/2 flex justify-between items-center px-2 py-2 bg-white rounded-xl'>
+              <input type="text" placeholder='Your email address...' className='text-sm px-4 py-3 outline-none' />
+              <button className="flex items-center text-sm gap-2 px-8 py-3 bg-black text-white rounded-xl hover:bg-gray-800">Subscribe</button>
+            </div>
           </div>
         </section>
       </div>

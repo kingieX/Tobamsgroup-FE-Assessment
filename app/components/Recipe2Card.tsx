@@ -35,7 +35,7 @@ const Recipe2Card: React.FC<RecipeCardProps> = ({
   };
 
   return (
-    <div className="relative rounded-xl bg-[#E7F9FD] shadow-md overflow-hidden transition-transform transform hover:scale-105 cursor-pointer">
+    <div className="relative rounded-xl bg-[] shadow-sm overflow-hidden transition-transform transform hover:scale-105 cursor-pointer">
       {/* Like/Unlike Icon */}
       <div className="absolute top-4 right-4 z-10 cursor-pointer p-2 bg-white rounded-full" onClick={toggleLike}>
         {isLiked ? (
@@ -51,7 +51,7 @@ const Recipe2Card: React.FC<RecipeCardProps> = ({
       </div>
 
       {/* Recipe Details */}
-      <div className="p-4">
+      <div className="py-4">
         <h3 className="text-md font-semibold text-gray-900">{title}</h3>
         {/* <p className="text-sm text-gray-600 mt-1">{description}</p> */}
 
