@@ -4,6 +4,9 @@ import Hero from './components/Hero';
 import CategoryCard from './components/CategoryCard';
 import RecipeCard from './components/RecipeCard';
 import ChefSection from './components/ChefSection';
+import InstagramCard from './components/InstagramCard';
+
+import { FaInstagram } from "react-icons/fa6";
 
 // Categories data
 const categories = [
@@ -103,7 +106,14 @@ const recipes = [
     badge: "/heart-icon.svg",
     isLiked: false, // This recipe is not liked
   }
-  // More recipes...
+];
+
+// Instagram post data
+const instagramImages = [
+  '/instagram-post/Post1.png',
+  '/instagram-post/Post2.png',
+  '/instagram-post/Post3.png',
+  '/instagram-post/Post4.png',
 ];
 
 
@@ -162,6 +172,26 @@ const HomePage = () => {
         {/* Chef Section */}
         <section className="py-16 px-24">
           <ChefSection />
+        </section>
+
+        {/* Instagram post */}
+        <section className="py-12 px-24 bg-gradient-to-b from-white to-[#E7F9FD]">
+          <div className='flex flex-col items-center mb-8'>
+            <h2 className="text-4xl font-medium text-center mb-8">Check out @foodieland on Instagram</h2>
+              <p className="text-center text-gray-600 max-w-2xl mb-8">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
+          </div>
+          <div className="flex justify-center space-x-8 mb-16">
+            {instagramImages.map((image, index) => (
+              <InstagramCard key={index} image={image} />
+            ))}
+          </div>
+          <div className="flex justify-center text-center mt-8">
+            <button className="flex items-center gap-2 px-4 py-3 bg-black text-white rounded-lg hover:bg-gray-800">
+              <span className='text-sm'>Visit Our Instagram</span> <FaInstagram />
+            </button>
+          </div>
         </section>
       </div>
     </>

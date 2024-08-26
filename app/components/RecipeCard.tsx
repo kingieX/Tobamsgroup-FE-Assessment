@@ -43,7 +43,7 @@ const RecipeCard: React.FC<RecipeCardProps> = ({
   }
 
   return (
-    <div className="relative rounded-xl bg-[#E7F9FD] shadow-md overflow-hidden transition-transform transform hover:scale-105">
+    <div className="relative rounded-xl bg-[#E7F9FD] shadow-md overflow-hidden transition-transform transform hover:scale-105 cursor-pointer">
       {/* Like/Unlike Icon */}
       <div className="absolute top-4 right-4 z-10 cursor-pointer p-2 bg-white rounded-full" onClick={toggleLike}>
         {isLiked ? (
