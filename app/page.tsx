@@ -7,6 +7,7 @@ import ChefSection from './components/ChefSection';
 import InstagramCard from './components/InstagramCard';
 
 import { FaInstagram } from "react-icons/fa6";
+import Recipe2Card from './components/Recipe2Card';
 
 // Categories data
 const categories = [
@@ -116,6 +117,89 @@ const instagramImages = [
   '/instagram-post/Post4.png',
 ];
 
+// Recipe2 data
+const recipes2 = [
+  {
+    id: 1,
+    type: 'recipe',
+    title: "Mixed Tropical Fruit Salad with Superfood Boosts ",
+    image: "/recipe2/recipe1.png",
+    time: "30 Minutes",
+    label: "Healthy",
+    badge: "/heart-icon.svg",
+    isLiked: true, // This recipe is liked
+  },
+  {
+    id: 2,
+    type: 'recipe',
+    title: "Big and Juicy Wagyu Beef Cheeseburger",
+    image: "/recipe2/recipe2.png",
+    time: "30 Minutes",
+    label: "Western",
+    badge: "/heart-icon.svg",
+    isLiked: false, // This recipe is not liked
+  },
+  {
+    id: 3,
+    type: 'recipe',
+    title: "Healthy Japanese Fried Rice with Asparagus",
+    image: "/recipe2/recipe3.png",
+    time: "30 Minutes",
+    label: "Healthy",
+    badge: "/heart-icon.svg",
+    isLiked: true, // This recipe is liked
+  },
+  {
+    id: 4,
+    type: 'recipe',
+    title: "Cauliflower Walnut Vegetarian Taco Meat",
+    image: "/recipe2/recipe4.png",
+    time: "30 Minutes",
+    label: "Eastern",
+    badge: "/heart-icon.svg",
+    isLiked: false, // This recipe is liked
+  },
+  {
+    id: 5,
+    type: 'recipe',
+    title: "Rainbow Chicken Salad with Almond Honey Mustard Dressing",
+    image: "/recipe2/recipe5.png",
+    time: "30 Minutes",
+    label: "Healthy",
+    badge: "/heart-icon.svg",
+    isLiked: true, // This recipe is not liked
+  },
+  {
+    id: 6,
+    type: 'recipe',
+    title: "Barbeque Spicy Sandwiches with Chips ",
+    image: "/recipe2/recipe6.png",
+    time: "30 Minutes",
+    label: "Snack",
+    badge: "/heart-icon.svg",
+    isLiked: false, // This recipe is not liked
+  },
+  {
+    id: 7,
+    type: 'recipe',
+    title: "Firecracker Vegan Lettuce Wraps - Spicy! ",
+    image: "/recipe2/recipe7.png",
+    time: "30 Minutes",
+    label: "Seafood",
+    badge: "/heart-icon.svg",
+    isLiked: false, // This recipe is liked
+  },
+  {
+    id: 8,
+    type: 'recipe',
+    title: "Chicken Ramen Soup with Mushroom ",
+    image: "/recipe2/recipe8.png",
+    time: "30 Minutes",
+    label: "Japanese",
+    badge: "/heart-icon.svg",
+    isLiked: true, // This recipe is not liked
+  }
+];
 
 
 const HomePage = () => {
@@ -191,6 +275,30 @@ const HomePage = () => {
             <button className="flex items-center gap-2 px-4 py-3 bg-black text-white rounded-lg hover:bg-gray-800">
               <span className='text-sm'>Visit Our Instagram</span> <FaInstagram />
             </button>
+          </div>
+        </section>
+
+        {/* Second Recipe */}
+        <section className="py-24 px-24">
+          <div className='flex items-center justify-between mb-8'>
+            <h1 className="text-3xl font-medium max-w-md text-left mb-8">Try this delicious recipe to make your day</h1>
+            <p className="text-left text-gray-600 max-w-xl mb-8">Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqut enim ad minim </p>
+          </div>
+
+          {/* Recipes Grid 2*/}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {recipes2.map((recipe) => (
+              <Recipe2Card
+                key={recipe.id}
+                type={recipe.type}
+                title={recipe.title}
+                image={recipe.image}
+                time={recipe.time}
+                label={recipe.label}
+                badge={recipe.badge}
+                isLiked={recipe.isLiked}
+              />
+            ))}
           </div>
         </section>
       </div>
