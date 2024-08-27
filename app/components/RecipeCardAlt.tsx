@@ -16,7 +16,7 @@ interface RecipeCardProps {
   link?: string;
 }
 
-const Recipe2Card: React.FC<RecipeCardProps> = ({
+const RecipeCardAlt: React.FC<RecipeCardProps> = ({
   type,
   title,
   description,
@@ -47,7 +47,7 @@ const Recipe2Card: React.FC<RecipeCardProps> = ({
 
       {/* Recipe Image */}
       <div className="w-full h-48 relative">
-        <Image src={image} alt={title} layout="fill" />
+        <Image src={image} alt={title} layout="fill" loading='lazy' />
       </div>
 
       {/* Recipe Details */}
@@ -58,11 +58,11 @@ const Recipe2Card: React.FC<RecipeCardProps> = ({
         {/* Time and Label */}
         <div className="flex items-center mt-4 space-x-3">
           <div className="flex items-center space-x-2">
-            <Image src="Timer.svg" alt='Timer' width={16} height={16} />
+            <Image src="Timer.svg" alt='Timer' width={16} height={16} loading='lazy' />
             <span className="text-sm text-gray-600">{time}</span>
           </div>
           <div className='flex items-center space-x-2'>
-            <Image src="ForkKnife.svg" alt='ForkKnife' width={16} height={16} />
+            <Image src="ForkKnife.svg" alt='ForkKnife' width={16} height={16} loading='lazy' />
             <span className="text-sm font-medium text-gray-600">{label}</span>
           </div>
         </div>
@@ -71,4 +71,4 @@ const Recipe2Card: React.FC<RecipeCardProps> = ({
   );
 };
 
-export default Recipe2Card;
+export default RecipeCardAlt;

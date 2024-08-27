@@ -37,7 +37,7 @@ const RecipeCard: React.FC<RecipeCardProps> = ({
   if (type === 'ad') {
     return (
       <div className="w-full transition-transform transform hover:scale-105">
-          <Image src={image} alt={title} width={1000} height={1000} className="w-full" />
+          <Image src={image} alt={title} width={1000} height={1000} className="w-full" loading='lazy' />
       </div>
     );
   }
@@ -55,7 +55,7 @@ const RecipeCard: React.FC<RecipeCardProps> = ({
 
       {/* Recipe Image */}
       <div className="w-full h-52 relative">
-        <Image src={image} alt={title} layout="fill" />
+        <Image src={image} alt={title} layout="fill" loading='lazy' />
       </div>
 
       {/* Recipe Details */}
@@ -66,11 +66,11 @@ const RecipeCard: React.FC<RecipeCardProps> = ({
         {/* Time and Label */}
         <div className="flex items-center mt-4 space-x-3">
           <div className="flex items-center space-x-2">
-            <Image src="Timer.svg" alt='Timer' width={16} height={16} />
+            <Image src="Timer.svg" alt='Timer' width={16} height={16} loading='lazy' />
             <span className="text-sm text-gray-600">{time}</span>
           </div>
           <div className='flex items-center space-x-2'>
-            <Image src="ForkKnife.svg" alt='ForkKnife' width={16} height={16} />
+            <Image src="ForkKnife.svg" alt='ForkKnife' width={16} height={16} loading='lazy' />
             <span className="text-sm font-medium text-gray-600">{label}</span>
           </div>
         </div>

@@ -7,202 +7,14 @@ import ChefSection from './components/ChefSection';
 import InstagramCard from './components/InstagramCard';
 
 import { FaInstagram } from "react-icons/fa6";
-import Recipe2Card from './components/Recipe2Card';
-import Image from 'next/image';
+import RecipeCardAlt from './components/RecipeCardAlt';
 import EmailCard from './components/EmailCard';
 
-// Categories data
-const categories = [
-  { id: 1, label: "Breakfast", image: "/category/category1.png", gradient: "bg-gradient-to-b from-white to-green-100" },
-  { id: 2, label: "Vegan", image: "/category/category2.png", gradient: "bg-gradient-to-b from-white to-green-100" },
-  { id: 3, label: "Meat", image: "/category/category3.png", gradient: "bg-gradient-to-b from-white to-red-100" },
-  { id: 4, label: "Dessert", image: "/category/category4.png", gradient: "bg-gradient-to-b from-white to-yellow-100" },
-  { id: 5, label: "Lunch", image: "/category/category5.png", gradient: "bg-gradient-to-b from-white to-orange-100" },
-  { id: 6, label: "Chocolate", image: "/category/category6.png", gradient: "bg-gradient-to-b from-white to-pink-100" },
-];
-
-// Recipe data
-const recipes = [
-  {
-    id: 1,
-    type: 'recipe',
-    title: "Big and Juicy Wagyu Beef Cheeseburger",
-    image: "/recipe/recipe1.png",
-    time: "30 Minutes",
-    label: "Snack",
-    badge: "/heart-icon.svg",
-    isLiked: true, // This recipe is liked
-  },
-  {
-    id: 2,
-    type: 'recipe',
-    title: "Fresh Lime Roasted Salmon with Ginger Sauce",
-    image: "/recipe/recipe2.png",
-    time: "30 Minutes",
-    label: "Fish",
-    badge: "/heart-icon.svg",
-    isLiked: false, // This recipe is not liked
-  },
-  {
-    id: 3,
-    type: 'recipe',
-    title: "Strawberry Oatmeal Pancake with Honey Syrup",
-    image: "/recipe/recipe3.png",
-    time: "30 Minutes",
-    label: "Breakfast",
-    badge: "/heart-icon.svg",
-    isLiked: false, // This recipe is not liked
-  },
-  {
-    id: 4,
-    type: 'recipe',
-    title: "Fresh and Healthy Mixed Mayonnaise Salad",
-    image: "/recipe/recipe4.png",
-    time: "30 Minutes",
-    label: "Healthy",
-    badge: "/heart-icon.svg",
-    isLiked: true, // This recipe is liked
-  },
-  {
-    id: 5,
-    type: 'recipe',
-    title: "Chicken Meatballs with Cream Cheese",
-    image: "/recipe/recipe5.png",
-    time: "30 Minutes",
-    label: "Meat",
-    badge: "/heart-icon.svg",
-    isLiked: false, // This recipe is not liked
-  },
-  {
-    id: 6,
-    type: 'ad',
-    title: "Chocolate Brownie with Whipped Cream",
-    image: "/recipe/Ads.png",
-  },
-  {
-    id: 7,
-    type: 'recipe',
-    title: "Fruity Pancake with Orange & Blueberry",
-    image: "/recipe/recipe6.png",
-    time: "30 Minutes",
-    label: "Sweet",
-    badge: "/heart-icon.svg",
-    isLiked: true, // This recipe is  liked
-  },
-  {
-    id: 8,
-    type: 'recipe',
-    title: "The Best Easy One Pot Chicken and Rice",
-    image: "/recipe/recipe7.png",
-    time: "30 Minutes",
-    label: "Snack",
-    badge: "/heart-icon.svg",
-    isLiked: false, // This recipe is not liked
-  },
-  {
-    id: 9,
-    type: 'recipe',
-    title: "The Creamiest Creamy Chicken and Bacon Pasta",
-    image: "/recipe/recipe8.png",
-    time: "30 Minutes",
-    label: "Noodles",
-    badge: "/heart-icon.svg",
-    isLiked: false, // This recipe is not liked
-  }
-];
-
-// Instagram post data
-const instagramImages = [
-  '/instagram-post/Post1.png',
-  '/instagram-post/Post2.png',
-  '/instagram-post/Post3.png',
-  '/instagram-post/Post4.png',
-];
-
-// Recipe2 data
-const recipes2 = [
-  {
-    id: 1,
-    type: 'recipe',
-    title: "Mixed Tropical Fruit Salad with Superfood Boosts ",
-    image: "/recipe2/recipe1.png",
-    time: "30 Minutes",
-    label: "Healthy",
-    badge: "/heart-icon.svg",
-    isLiked: true, // This recipe is liked
-  },
-  {
-    id: 2,
-    type: 'recipe',
-    title: "Big and Juicy Wagyu Beef Cheeseburger",
-    image: "/recipe2/recipe2.png",
-    time: "30 Minutes",
-    label: "Western",
-    badge: "/heart-icon.svg",
-    isLiked: false, // This recipe is not liked
-  },
-  {
-    id: 3,
-    type: 'recipe',
-    title: "Healthy Japanese Fried Rice with Asparagus",
-    image: "/recipe2/recipe3.png",
-    time: "30 Minutes",
-    label: "Healthy",
-    badge: "/heart-icon.svg",
-    isLiked: true, // This recipe is liked
-  },
-  {
-    id: 4,
-    type: 'recipe',
-    title: "Cauliflower Walnut Vegetarian Taco Meat",
-    image: "/recipe2/recipe4.png",
-    time: "30 Minutes",
-    label: "Eastern",
-    badge: "/heart-icon.svg",
-    isLiked: false, // This recipe is liked
-  },
-  {
-    id: 5,
-    type: 'recipe',
-    title: "Rainbow Chicken Salad with Almond Honey Mustard Dressing",
-    image: "/recipe2/recipe5.png",
-    time: "30 Minutes",
-    label: "Healthy",
-    badge: "/heart-icon.svg",
-    isLiked: true, // This recipe is not liked
-  },
-  {
-    id: 6,
-    type: 'recipe',
-    title: "Barbeque Spicy Sandwiches with Chips ",
-    image: "/recipe2/recipe6.png",
-    time: "30 Minutes",
-    label: "Snack",
-    badge: "/heart-icon.svg",
-    isLiked: false, // This recipe is not liked
-  },
-  {
-    id: 7,
-    type: 'recipe',
-    title: "Firecracker Vegan Lettuce Wraps - Spicy! ",
-    image: "/recipe2/recipe7.png",
-    time: "30 Minutes",
-    label: "Seafood",
-    badge: "/heart-icon.svg",
-    isLiked: false, // This recipe is liked
-  },
-  {
-    id: 8,
-    type: 'recipe',
-    title: "Chicken Ramen Soup with Mushroom ",
-    image: "/recipe2/recipe8.png",
-    time: "30 Minutes",
-    label: "Japanese",
-    badge: "/heart-icon.svg",
-    isLiked: true, // This recipe is not liked
-  }
-];
-
+// data
+import { categories } from './data/categories';
+import { recipes } from './data/recipes';
+import { instagramImages } from './data/instagramImages';
+import { recipes2 } from './data/recipesalt';
 
 const HomePage = () => {
   return (
@@ -296,7 +108,7 @@ const HomePage = () => {
           {/* Recipes Grid 2*/}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8 gap-4">
             {recipes2.map((recipe) => (
-              <Recipe2Card
+              <RecipeCardAlt
                 key={recipe.id}
                 type={recipe.type}
                 title={recipe.title}

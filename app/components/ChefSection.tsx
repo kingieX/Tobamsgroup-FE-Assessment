@@ -15,7 +15,7 @@ const ChefSection: React.FC = () => {
         </button>
       </div>
       <div className="lg:w-1/2 mt-6 md:mt-0 flex justify-center">
-        <Image src="/chef.png" alt="Chef" width={1000} height={1000} className="w-full rounded-lg" />
+        <Image src="/chef.png" alt="Chef" width={1000} height={1000} className="w-full rounded-lg" loading='lazy' />
       </div>
     </div>
   );

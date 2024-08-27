@@ -8,12 +8,12 @@ const EmailCard = () => {
       <section className='relative lg:py-8 py-4 lg:px-24 px-8 lg:mb-12 mb-6'>
           {/* Left Image */}
           <div className='absolute w-1/4 lg:left-[266px] lg:top-[260px] left-20 top-[300px]  lg:rounded-[45px] rounded-xl overflow-hidden transform -translate-y-1/2 -translate-x-1/2'>
-            <Image src="/email-left.png" alt="Left Decorative Image" width={1000} height={1000} />
+            <Image src="/email-left.png" alt="Left Decorative Image" width={1000} height={1000} loading='lazy' />
           </div>
 
           {/* Right Image */}
           <div className='w-1/4 absolute lg:right-[266px] lg:top-[312px] right-20 top-80 lg:rounded-[45px] rounded-xl  overflow-hidden transform -translate-y-1/2 translate-x-1/2'>
-            <Image src="/email-right.png" alt="Right Decorative Image" width={1000} height={1000} />
+            <Image src="/email-right.png" alt="Right Decorative Image" width={1000} height={1000} loading='lazy' />
           </div>
 
           <div className='flex flex-col justify-center items-center bg-[#E7F9FD] lg:rounded-[45px] rounded-xl lg:py-24 py-8 lg:px-24 px-8'>
