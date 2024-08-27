@@ -14,7 +14,7 @@ const Navbar = () => {
 
   return (
     <nav className="relative bg-white shadow-md">
-      <div className="container mx-auto flex items-center justify-between py-8 px-12">
+      <div className="container mx-auto flex items-center justify-between lg:py-8 py-4 px-12">
         <div className="text-2xl font-bold">
           <Link href="/">
             <Image
@@ -75,7 +75,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="absolute w-full md:hidden bg-white shadow-md p-4 z-10">
+        <div className="absolute w-full md:hidden bg-white shadow-md p-4 z-10 border-t">
           <ul className="flex flex-col items-center space-y-4">
             <li>
               <Link href="/">
