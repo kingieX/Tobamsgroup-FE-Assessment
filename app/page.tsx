@@ -8,6 +8,7 @@ import InstagramCard from './components/InstagramCard';
 
 import { FaInstagram } from "react-icons/fa6";
 import Recipe2Card from './components/Recipe2Card';
+import Image from 'next/image';
 
 // Categories data
 const categories = [
@@ -206,38 +207,44 @@ const HomePage = () => {
   return (
     <>
       <div className="home-page">
-        <div className='lg:py-12 py-6 px-4'>
+        <div className='lg:py-12 py-6 px-8'>
           <Hero />
         </div>
 
         {/* categories section */}
-        <div className="py-10 px-24">
-          <div className="flex justify-between items-center mb-12">
-            <h2 className="text-2xl font-bold text-gray-900">Categories</h2>
+        <div className="lg:py-10 py-8 lg:px-24 px-8">
+          <div className="flex justify-between items-center lg:mb-12 mb-8">
+            <h2 className="lg:text-2xl text-xl font-bold text-gray-900">Categories</h2>
             <button className="text-sm font-medium bg-[#E7FAFE] px-4 py-2 rounded-xl hover:bg-blue-100 transition-colors duration-300">
               View All Categories
             </button>
           </div>
           
-          <div className="flex justify-between space-x-4">
-            {categories.map(category => (
-              <CategoryCard key={category.id} label={category.label} image={category.image}  gradient={category.gradient} />
+          <div className="grid grid-cols-2 md:grid-cols-6 gap-4">
+            {categories.map((category) => (
+              <CategoryCard
+                key={category.id}
+                label={category.label}
+                image={category.image}
+                gradient={category.gradient}
+              />
             ))}
           </div>
+
         </div>
 
         {/* Recipe section */}
-        <section className="py-12 px-24">
+        <section className="lg:py-12 py-8 lg:px-24 px-8">
           {/* Heading and Description */}
-          <div className="flex flex-col justify-center items-center text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900">Simple and tasty recipes</h2>
-            <p className="text-gray-600 mt-4 max-w-xl text-center">
+          <div className="flex flex-col justify-center items-center text-center lg:mb-16 mb-8">
+            <h2 className="lg:text-3xl text-2xl font-bold text-gray-900">Simple and tasty recipes</h2>
+            <p className="text-gray-600 mt-4 lg:max-w-xl text-center">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
           </div>
 
           {/* Recipes Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:gap-12 gap-6">
             {recipes.map((recipe) => (
               <RecipeCard
                 key={recipe.id}
@@ -254,19 +261,19 @@ const HomePage = () => {
         </section>
 
         {/* Chef Section */}
-        <section className="py-16 px-24">
+        <section className="lg:py-16 py-8 lg:px-24 px-8">
           <ChefSection />
         </section>
 
         {/* Instagram post */}
-        <section className="py-12 px-24 bg-gradient-to-b from-white to-[#E7F9FD]">
+        <section className="lg:py-12 py-8 lg:px-24 px-8 lg:bg-gradient-to-b from-white to-[#E7F9FD]">
           <div className='flex flex-col items-center mb-8'>
-            <h2 className="text-4xl font-medium text-center mb-8">Check out @foodieland on Instagram</h2>
-              <p className="text-center text-gray-600 max-w-2xl mb-8">
+            <h2 className="lg:text-4xl text-2xl font-medium text-center lg:mb-8 mb-4">Check out @foodieland on Instagram</h2>
+              <p className="text-center text-gray-600 lg:max-w-2xl lg:mb-8 mb-4">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
               </p>
           </div>
-          <div className="flex justify-center space-x-8 mb-16">
+          <div className="flex lg:flex-row flex-col justify-center lg:gap-8 gap-4 lg:mb-16 mb-8">
             {instagramImages.map((image, index) => (
               <InstagramCard key={index} image={image} />
             ))}
@@ -279,14 +286,14 @@ const HomePage = () => {
         </section>
 
         {/* Second Recipe */}
-        <section className="py-24 px-24">
-          <div className='flex items-center justify-between mb-8'>
-            <h1 className="text-3xl font-medium max-w-md text-left mb-8">Try this delicious recipe to make your day</h1>
-            <p className="text-left text-gray-600 max-w-xl mb-8">Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqut enim ad minim </p>
+        <section className="lg:py-24 lg:px-24 py-8 px-8">
+          <div className='flex lg:flex-row flex-col items-center justify-between mb-8'>
+            <h1 className="lg:text-3xl text-2xl text-center font-medium max-w-md lg:text-left lg:mb-8 mb-4">Try this delicious recipe to make your day</h1>
+            <p className="lg:text-left text-center text-gray-600 max-w-xl lg:mb-8 mb-4">Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqut enim ad minim </p>
           </div>
 
           {/* Recipes Grid 2*/}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8 gap-4">
             {recipes2.map((recipe) => (
               <Recipe2Card
                 key={recipe.id}
@@ -303,18 +310,31 @@ const HomePage = () => {
         </section>
 
         {/* Send email */}
-        <section className='py-8 px-24'>
-          <div className='flex flex-col justify-center items-center bg-[#E7F9FD] rounded-[45px] py-24 px-24'>
+        <section className='relative lg:py-8 py-4 lg:px-24 px-8 lg:mb-12 mb-6'>
+          {/* Left Image */}
+          <div className='absolute w-1/4 lg:left-[266px] lg:top-[260px] left-20 top-[300px]  lg:rounded-[45px] rounded-xl overflow-hidden transform -translate-y-1/2 -translate-x-1/2'>
+            <Image src="/email-left.png" alt="Left Decorative Image" width={1000} height={1000} />
+          </div>
+
+          {/* Right Image */}
+          <div className='w-1/4 absolute lg:right-[266px] lg:top-[312px] right-20 top-80 lg:rounded-[45px] rounded-xl  overflow-hidden transform -translate-y-1/2 translate-x-1/2'>
+            <Image src="/email-right.png" alt="Right Decorative Image" width={1000} height={1000} />
+          </div>
+
+          <div className='flex flex-col justify-center items-center bg-[#E7F9FD] lg:rounded-[45px] rounded-xl lg:py-24 py-8 lg:px-24 px-8'>
             <div className='mb-4'>
-              <h2 className="text-4xl font-medium text-center mb-4">Deliciousness to your inbox</h2>
-              <p className="text-center text-gray-600 max-w-xl mb-8">Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqut enim ad minim </p>
+              <h2 className="lg:text-4xl text-2xl font-medium text-center lg:mb-4 mb-2">Deliciousness to your inbox</h2>
+              <p className="text-center lg:text-md text-sm text-gray-600 lg:max-w-xl lg:mb-8 mb-4">
+                Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquat enim ad minim
+              </p>
             </div>
-            <div className='w-1/2 flex justify-between items-center px-2 py-2 bg-white rounded-xl'>
-              <input type="text" placeholder='Your email address...' className='text-sm px-4 py-3 outline-none' />
-              <button className="flex items-center text-sm gap-2 px-8 py-3 bg-black text-white rounded-xl hover:bg-gray-800">Subscribe</button>
+            <div className='lg:w-1/2 w-full flex lg:flex-row flex-col lg:justify-between items-center gap-4 lg:px-2 lg:py-2 lg:bg-white lg:rounded-xl'>
+              <input type="text" placeholder='Your email address...' className='w-full text-sm px-4 lg:py-3 py-2 outline-none rounded-xl' />
+              <button className="flex items-center text-sm gap-2 px-8 lg:py-3 py-2 bg-black text-white rounded-xl hover:bg-gray-800">Subscribe</button>
             </div>
           </div>
         </section>
+
       </div>
     </>
   );

@@ -4,12 +4,12 @@ import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
     return (
-      <footer className="py-4 px-12">
+      <footer className="py-4 lg:px-12 px-4">
         <div className="flex flex-col gap-8 py-8 px-8">
           <Image src='./Foodieland.svg' alt='Foodieland logo' width={40} height={40} className='w-32' />
-          <div className="flex justify-between">
-            <p className="text-sm text-gray-500">Lorem ipsum dolor sit amet, consectetuipisicing elit, </p>
-            <ul className="flex space-x-10 text-sm">
+          <div className="flex lg:flex-row flex-col justify-between gap-4">
+            <p className="text-sm lg:text-left text-center text-gray-500">Lorem ipsum dolor sit amet, consectetuipisicing elit, </p>
+            <ul className="flex lg:space-x-10 space-x-4 text-sm">
               <li>
                 <Link href="/">
                   <p className="hover:text-gray-700">Home</p>
@@ -38,7 +38,7 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        <div className="container flex justify-between items-center mx-auto px-4 py-8 text-center border-t-2 border-gray-100">
+        <div className="container flex lg:flex-row flex-col-reverse justify-between items-center gap-4 mx-auto px-4 py-8 text-center border-t-2 border-gray-100">
           <div></div>
           <p className="text-sm text-gray-500">
           © 2020 Flowbase. Powered by <span className="text-red-500 cursor-pointer hover:underline">Webflow</span>

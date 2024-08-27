@@ -4,11 +4,11 @@ import React from 'react';
 const Hero: React.FC = () => {
   return (
     <div className="flex justify-center items-center">
-      <div className="flex lg:flex-row flex-col-reverse relative w-full max-w-6xl h-full bg-[#E7FAFE] rounded-[35px] shadow-lg overflow-hidden transform transition-all duration-500 hover:scale-105">
+      <div className="flex lg:flex-row flex-col-reverse relative w-full max-w-6xl h-full bg-[#E7FAFE] lg:rounded-[35px] rounded-xl shadow-lg overflow-hidden transform transition-all duration-500 hover:scale-105">
         
         {/* Left Half */}
-        <div className="w-1/2 h-full px-12 py-12 bg-[#E7FAFE] flex flex-col justify-between">
-            <div className='flex flex-col gap-3 mb-12'>
+        <div className="lg:w-1/2 w-full h-full lg:px-12 px-6 lg:py-12 py-6 bg-[#E7FAFE] flex flex-col justify-between">
+            <div className='flex lg:items-start items-center flex-col gap-3 lg:mb-12 mb-6'>
                 {/* Top Label */}
                 <div className="w-max bg-white font-semibold px-3 py-2 rounded-full inline-flex items-center shadow-md">
                     <Image src="/hot-recipe.svg" alt='Hot recipe' width={16} height={16} className="mr-2"/> 
@@ -16,17 +16,17 @@ const Hero: React.FC = () => {
                 </div>
 
                 {/* Title */}
-                <h2 className="text-5xl max-w-sm font-medium leading-tight text-gray-900 mt-4">
+                <h2 className="lg:text-5xl text-3xl lg:text-left text-center max-w-sm font-medium leading-tight text-gray-900 lg:mt-4 mt-2">
                     Spicy delicious chicken wings
                 </h2>
 
                 {/* Description */}
-                <p className="max-w-md text-sm text-gray-600 mt-2">
+                <p className="lg:max-w-md text-sm lg:text-left text-center text-gray-600 lg:mt-2 mt-1">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
 
                 {/* Icons and Labels */}
-                <div className="flex items-center space-x-4 mt-4">
+                <div className="flex lg:justify-start justify-center items-center space-x-4 mt-4">
                     <div className="bg-slate-200 py-2 px-3 rounded-full flex items-center space-x-2 text-gray-600">
                         <Image src="Timer.svg" alt='Timer' width={16} height={16} />
                         <span className='text-sm'>30 Minutes</span>
@@ -38,7 +38,7 @@ const Hero: React.FC = () => {
                 </div>
             </div>
 
-            <div className='flex justify-between items-center'>
+            <div className='flex lg:flex-row flex-col justify-between items-center gap-4'>
                 {/* Author Info */}
                 <div className="flex items-center">
                     <Image
@@ -63,7 +63,7 @@ const Hero: React.FC = () => {
         </div>
 
         {/* Right Half */}
-        <div className="w-1/2 h-full">
+        <div className="lg:w-1/2 w-full h-full">
           <Image
             src="/hero.png"
             alt="Chicken Wings"
@@ -76,13 +76,13 @@ const Hero: React.FC = () => {
         </div>
 
         {/* Middle Absolute Positioned Image */}
-        <div className="absolute top-1/4 left-1/2 ml-6 transform -translate-x-1/2 -translate-y-1/2 z-10">
+        <div className="absolute lg:top-1/4 lg:left-1/2 top-80 left-12 ml-6 transform -translate-x-1/2 -translate-y-1/2 z-10">
           <Image
             src="/Badge.png"
             alt="Handpicked Badge"
             width={100}
             height={100}
-            className="rounded-full"
+            className="rounded-full w-12 lg:w-24"
           />
         </div>
       </div>

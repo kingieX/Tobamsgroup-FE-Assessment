@@ -13,7 +13,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="relative bg-white shadow-md">
+    <nav className="w-full fixed  bg-white shadow-md z-50">
       <div className="container mx-auto flex items-center justify-between lg:py-8 py-4 px-12">
         <div className="text-2xl font-bold">
           <Link href="/">
