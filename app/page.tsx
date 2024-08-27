@@ -206,7 +206,7 @@ const HomePage = () => {
   return (
     <>
       <div className="home-page">
-        <div className='py-12'>
+        <div className='lg:py-12 py-6 px-4'>
           <Hero />
         </div>
 

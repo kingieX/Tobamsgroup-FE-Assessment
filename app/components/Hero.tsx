@@ -4,7 +4,7 @@ import React from 'react';
 const Hero: React.FC = () => {
   return (
     <div className="flex justify-center items-center">
-      <div className="flex relative w-full max-w-6xl h-full bg-[#E7FAFE] rounded-[35px] shadow-lg overflow-hidden transform transition-all duration-500 hover:scale-105">
+      <div className="flex lg:flex-row flex-col-reverse relative w-full max-w-6xl h-full bg-[#E7FAFE] rounded-[35px] shadow-lg overflow-hidden transform transition-all duration-500 hover:scale-105">
         
         {/* Left Half */}
         <div className="w-1/2 h-full px-12 py-12 bg-[#E7FAFE] flex flex-col justify-between">
