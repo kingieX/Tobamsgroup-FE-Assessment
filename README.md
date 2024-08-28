@@ -73,6 +73,7 @@ Or if you're using yarn:
 yarn build
 yarn start
 
+```
 
 ## Project Structure
 
